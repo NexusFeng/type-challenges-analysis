@@ -5,6 +5,12 @@
 type MyExclude<T, U> = T extends U ? never : T
 ```
 #### 📑 分析
+```ts
+// ts内置工具类型Exclude:从UnionType中去掉所有能够赋值给ExcludedMembers的属性，然后剩下的属性构成一个新的类型
+Exclude<UnionType, ExcludedMembers>
+type T0 = Exclude<"a" | "b" | "c", "a">// 'b' | 'c'
+```
+---
 ts条件类型语法如下:
 ```ts
 // 当被检查类型(T)可以赋值给类型U时,返回类型X, 否则返回类型Y
