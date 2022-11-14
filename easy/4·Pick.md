@@ -6,7 +6,7 @@ type MyPick<T, K extends keyof T> = {
   [key in K]: T[key] 
 }
 ```
-#### 📑 分析
+#### 📑 知识点
 ```ts
 // ts中的Pick:从Type中选取一系列的属性，这些属性来自于Keys（字符串字面量或字符串字面量的联合类型），用这些属性构成新的type
 Pick<Type, Keys>

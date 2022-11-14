@@ -4,7 +4,7 @@
 ```ts
 type MyExclude<T, U> = T extends U ? never : T
 ```
-#### 📑 分析
+#### 📑 知识点
 ```ts
 // ts内置工具类型Exclude:从UnionType中去掉所有能够赋值给ExcludedMembers的属性，然后剩下的属性构成一个新的类型
 Exclude<UnionType, ExcludedMembers>
@@ -29,7 +29,6 @@ A | B | C extends U ? X : Y
 (A extends U ? X : Y) | (B extends U ? X : Y) | (C extends U ? X : Y) 
 ```
 TS几个内置工具类型的内部实现(Exclude/Extract/NonNullable等)也使用了条件类型
-#### 🚩 扩展
 ```ts
 // IsNumber2中的[T]被数组包装过了，不会进行分发，直接判断[string | number] extends number[], 得到了false
 type IsNumber2<T> = [T] extends number[] ? true : false
