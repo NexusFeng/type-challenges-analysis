@@ -35,4 +35,18 @@ interface test {
 }
 type Keys = keyof test; // 等效于 "a" | "b"
 ```
-`in`操作符用来遍历类型
+`in`操作符用来遍历类型  
+
+`type ValueOf<T> = T [keyof T]`获取所有值的联合类型
+```ts
+interface Todo1 {
+  title: string
+  description: string
+  completed: boolean
+  meta: {
+    author: string
+  }
+}
+type ValueOf<T> = T [keyof T]
+type test = ValueOf<Todo1> // 'string' | 'boolean' | { author:'string' }
+```
