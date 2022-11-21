@@ -38,3 +38,17 @@ interface Person {
 type Person = typeof message
 type Skill = typeof message['skill']
 ```
+获取联合类型
+```ts
+// 枚举类型转联合类型
+enum base { string, boolean }
+type Test = keyof typeof base // 'string' | 'boolean'
+// 获取对象key的联合类型
+const a = {
+    a: 1,
+    b: '1',
+    c: true
+}
+type Test = keyof typeof a // 'a' | 'b' | 'c'
+
+```
